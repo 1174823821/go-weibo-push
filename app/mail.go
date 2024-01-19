@@ -2,8 +2,9 @@ package app
 
 import (
 	"fmt"
-	"gopkg.in/gomail.v2"
 	"log"
+
+	"gopkg.in/gomail.v2"
 )
 
 var mail *gomail.Dialer
@@ -13,7 +14,7 @@ func SetUpMail() {
 	mail = gomail.NewDialer("smtp.qq.com", 465, Global.Mail.User, Global.Mail.Pass)
 	m, err := mail.Dial()
 	if err != nil {
-		log.Fatal("gomail init fail")
+		log.Fatal("gomail init fail", err.Error())
 	}
 	defer m.Close()
 }

@@ -5,7 +5,7 @@
     username = ""
     password = ""
     database = "db_weibo"
-    charset = "utf8"
+    charset = "utf8mb4"
 
 [mail]  #SMTP
     user = ""
@@ -13,5 +13,4 @@
     to   = ["xxx@qq.com"] # 发送到的邮箱
 
 [weibo]
-    uid = "" # 微博用户的uid
-    containerid = "" # 微博的containerid
+    uid = [""] # 微博用户的uid

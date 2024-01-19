@@ -2,16 +2,19 @@ package app
 
 import (
 	"fmt"
+
+	"log"
+	"os"
+
 	"github.com/lifegit/go-gulu/v2/pkg/fire"
 	"gorm.io/driver/mysql"
+
 	//"gorm.io/driver/postgres"
 	//"gorm.io/driver/sqlite"
 	//"gorm.io/driver/sqlserver"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"gorm.io/gorm/schema"
-	"log"
-	"os"
 )
 
 // init mysql

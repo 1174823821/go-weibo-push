@@ -1,13 +1,14 @@
 package app
 
 import (
+	"os"
+	"path"
+
 	"github.com/fsnotify/fsnotify"
 	"github.com/lifegit/go-gulu/v2/nice/file"
 	"github.com/lifegit/go-gulu/v2/pkg/viperine"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
-	"os"
-	"path"
 )
 
 var Global GlobalConf
@@ -35,13 +36,12 @@ type GlobalConf struct {
 		To   []string `toml:"to"`
 	} `toml:"mail"`
 	Weibo struct {
-		UID         string `toml:"uid"`
-		Containerid string `toml:"containerid"`
+		UID []string `toml:"uid"`
 	} `toml:"weibo"`
 }
 
-
 const DEV = "dev"
+
 func (g *GlobalConf) isDev() bool {
 	return g.getEnv() == DEV
 }
